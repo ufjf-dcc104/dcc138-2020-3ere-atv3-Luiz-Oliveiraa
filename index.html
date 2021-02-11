@@ -12,9 +12,16 @@
     <script>
         const canvas = document.querySelector("canvas");//Pega o canvas do documento
         const ctx = canvas.getContext("2d");//Pega o contexto de ferramentas do canvas
+        const skelly = document.querySelector("img");
+
+        skelly.addEventListener("load", terminouDeCarregar);
 
         ctx.fillStyle = "lightblue";
         ctx.fillRect(0,0,canvas.width,canvas.height);
+
+        function terminouDeCarregar(){
+            ctx.drawImage(skelly,0,0);
+        }
     </script>
 </body>
 </html>
