@@ -7,12 +7,13 @@
 </head>
 <body>
     <h1>Exemplo 02</h1>
-    <img src="assets/skeleton01.png" />
+    <!-- <img src="assets/skeleton01.png" /> -->
     <canvas></canvas>
     <script>
         const canvas = document.querySelector("canvas");//Pega o canvas do documento
         const ctx = canvas.getContext("2d");//Pega o contexto de ferramentas do canvas
-        const skelly = document.querySelector("img");
+        const skelly = new Image();
+        skelly.src = "assets/skeleton01.png"; //src dispara o carregamento em imagens
 
         skelly.addEventListener("load", terminouDeCarregar);
 
