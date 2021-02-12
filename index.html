@@ -13,45 +13,20 @@
         const canvas = document.querySelector("canvas");//Pega o canvas do documento
         const ctx = canvas.getContext("2d");//Pega o contexto de ferramentas do canvas
         const skelly = new Image();
-        skelly.src = "assets/skelly.png"; //src dispara o carregamento em imagens
-
-        skelly.addEventListener("load", terminouDeCarregar);
+        skelly.src = "assets/scottPilgrim01.png"; //src dispara o carregamento em imagens
 
         function desenhaFundo(){
             ctx.fillStyle = "green";
             ctx.fillRect(0,0,canvas.width,canvas.height);
         }
-        let l = 2;
-        let c = 1;
+        let l = 0;
+        let c = 0;
         let pose = 0;
         let quadro = 0;
         const POSES = [
-            {qmax: 7, pv:9},
-            {qmax: 7, pv:9},
-            {qmax: 7, pv:9},
-            {qmax: 7, pv:9},
             {qmax: 8, pv:9},
             {qmax: 8, pv:9},
-            {qmax: 8, pv:9},
-            {qmax: 8, pv:9},
-            {qmax: 9, pv:9},
-            {qmax: 9, pv:9},
-            {qmax: 9, pv:9},
-            {qmax: 9, pv:9},
-            {qmax: 6, pv:9},
-            {qmax: 6, pv:9},
-            {qmax: 6, pv:9},
-            {qmax: 6, pv:9},
-            {qmax: 13, pv:27},
-            {qmax: 13, pv:27},
-            {qmax: 13, pv:27},
-            {qmax: 13, pv:27},
-            {qmax: 6, pv:9}
         ];
-
-        function terminouDeCarregar(){
-            
-        }
 
         let t0;
         let dt;
@@ -66,9 +41,9 @@
 
             ctx.drawImage(skelly,
             // sx sy sw sh
-            Math.floor(quadro)*64, pose*64, 64, 64,
+            Math.floor(quadro)*108, pose*144, 108, 144,
             // dx dy dw dh
-            0, 0, 64, 64
+            0, 0, 108, 144
             );
             
             requestAnimationFrame(passo);
